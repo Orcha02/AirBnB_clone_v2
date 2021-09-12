@@ -10,7 +10,7 @@ Script that starts a Flask web application
     /number/<n>: display n is a number only if n is an integer
 """
 from flask import Flask, render_template
-app  = Flask(__name__)
+app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
