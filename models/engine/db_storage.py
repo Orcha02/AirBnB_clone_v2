@@ -67,3 +67,7 @@ class DBStorage:
         Base.metadata.create_all(self.__engine)
         session_fact = sessionmaker(expire_on_commit=False, bind=self.__engine)
         self.__session = scoped_session(session_fact)()
+
+    def close(self):
+        """Call close() method on the class Session"""
+        self.__session.close()
